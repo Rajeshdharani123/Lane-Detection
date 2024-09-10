@@ -37,20 +37,18 @@ Run the Python script:
 The script will process the video and display the detected road lanes frame by frame. Press q to quit the video display at any time.
 
 ### How It Works
-Grayscale Conversion: Each frame is converted to grayscale to reduce complexity.
-Blurring: Gaussian blur is applied to reduce noise in the image.
-Edge Detection: Canny edge detection is used to find the edges in the video frames.
-Masking: A mask is applied to focus on the region of the road.
-Line Detection: Hough Line Transformation is used to detect lane lines on the road.
-Overlay: Detected lines are overlaid on the original frame and displayed.
-Customization
+ - Grayscale Conversion: Each frame is converted to grayscale to reduce complexity.
+ - Blurring: Gaussian blur is applied to reduce noise in the image.
+ - Edge Detection: Canny edge detection is used to find the edges in the video frames.
+ - Masking: A mask is applied to focus on the region of the road.
+ - Line Detection: Hough Line Transformation is used to detect lane lines on the road.
+ - Overlay: Detected lines are overlaid on the original frame and displayed.
+### Customization
 Canny Edge Parameters: Adjust the threshold values for Canny edge detection to improve performance:
-python
 
-edges = cv2.Canny(blurred, 50, 150)  # Adjust these values
+    edges = cv2.Canny(blurred, 50, 150)  # Adjust these values
 Hough Line Transformation: You can tweak the parameters for Hough Line detection:
-python
-Copy code
-lines = cv2.HoughLinesP(masked_edges, rho=1, theta=np.pi/180, threshold=100, minLineLength=50, maxLineGap=150)
-Contributing
+
+    lines = cv2.HoughLinesP(masked_edges, rho=1, theta=np.pi/180, threshold=100, minLineLength=50, maxLineGap=150)
+### Contributing
 If you'd like to contribute to this project, feel free to submit a pull request or report any issues.
